@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css'
 import { Container } from 'react-bootstrap';
+import Formulario from './components/Formulario';
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
     <>
       <Container className='pt-5 mainPage'>
           <h3>Administrar colores</h3>
+          <Formulario></Formulario>
 
       </Container>
       <footer className='bg-dark text-light text-center py-4'>
