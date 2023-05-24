@@ -8,3 +8,12 @@
 .mainPage{
   flex-grow: 1;
 }
+
+.cuadroColorForm{
+  height: 50px;
+  width: 50px;
+}
+.cuadroColorCard{
+  height: 100px;
+  width: 100px;
+}

@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Container className='pt-5 mainPage'>
-          <h3>Administrar colores</h3>
+          <h3 className='text-center mb-3'>Administrar colores</h3>
           <Formulario></Formulario>
 
       </Container>
