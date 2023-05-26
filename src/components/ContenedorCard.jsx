@@ -1,12 +1,10 @@
 import CardColor from './CardColor';
 
-const ContenedorCard = ({colores}) => {
+const ContenedorCard = ({colores, borrarCard}) => {
     return (
         
-        <section className='row'>
-            
-            {colores.map((color, index) =>  <CardColor key={index} color={color} ></CardColor> )}
-
+        <section className='row'>  
+            {colores.map((color, index) =>  <CardColor key={index} color={color} borrarCard={borrarCard}></CardColor> )}
         </section>
     );
 };

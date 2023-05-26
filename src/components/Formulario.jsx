@@ -12,10 +12,10 @@ const Formulario = () => {
     setColores([...colores, color]);
     setColor('');
   }
-  // const nuevaCard = { nombreColor: color };
-  //   setColores([...colores, nuevaCard]);
-  //   setColor('');
-  // };
+  const borrarCard = (card)=>{
+    let arregloFiltrado = colores.filter((colorCard)=> colorCard !== card)
+    setColores(arregloFiltrado);
+  }
 
   return (
     <section className='mx-3 mx-md-5'>
@@ -36,7 +36,7 @@ const Formulario = () => {
           
         </Form.Group>
       </Form>
-      <ContenedorCard colores={colores}></ContenedorCard>
+      <ContenedorCard colores={colores} borrarCard={borrarCard}></ContenedorCard>
     </section>
   );
 };
