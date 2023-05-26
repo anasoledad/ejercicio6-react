@@ -1,11 +1,17 @@
 import {Form, Button} from 'react-bootstrap'
 import ContenedorCard from './ContenedorCard';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Formulario = () => {
 
   const [color, setColor] = useState('');
-  const [colores, setColores] = useState([]);
+  let coloresLocalstorage = JSON.parse(localStorage.getItem('cardsColores')) || [];
+  const [colores, setColores] = useState(coloresLocalstorage);
+
+  useEffect(()=>{
+    localStorage.setItem('cardsColores', JSON.stringify(colores))
+  }, [colores])
+ 
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -24,7 +30,7 @@ const Formulario = () => {
         <Form.Group className="mb-3" controlId="color">
           <div className='d-flex'>
             <div className='cuadroColorForm border border-dark me-2 me-md-4' style={{ backgroundColor: color }}></div>
-            <Form.Control type="texto" placeholder="Ingrese un color ej Blue" onChange={(e)=> setColor(e.target.value)}
+            <Form.Control type="text" placeholder="Ingrese un color ej Blue" onChange={(e)=> setColor(e.target.value)}
           value={color}/>
           </div>
 
