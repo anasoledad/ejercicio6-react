@@ -12,6 +12,10 @@ const Formulario = () => {
     setColores([...colores, color]);
     setColor('');
   }
+  // const nuevaCard = { nombreColor: color };
+  //   setColores([...colores, nuevaCard]);
+  //   setColor('');
+  // };
 
   return (
     <section className='mx-3 mx-md-5'>
@@ -19,7 +23,7 @@ const Formulario = () => {
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="color">
           <div className='d-flex'>
-            <div className='cuadroColorForm border border-dark me-2 me-md-4'></div>
+            <div className='cuadroColorForm border border-dark me-2 me-md-4' style={{ backgroundColor: color }}></div>
             <Form.Control type="texto" placeholder="Ingrese un color ej Blue" onChange={(e)=> setColor(e.target.value)}
           value={color}/>
           </div>
@@ -32,7 +36,7 @@ const Formulario = () => {
           
         </Form.Group>
       </Form>
-      <ContenedorCard></ContenedorCard>
+      <ContenedorCard colores={colores}></ContenedorCard>
     </section>
   );
 };

@@ -1,12 +1,12 @@
 import CardColor from './CardColor';
 
-const ContenedorCard = () => {
+const ContenedorCard = ({colores}) => {
     return (
         
         <section className='row'>
-              <CardColor></CardColor>
-              <CardColor></CardColor>
-              <CardColor></CardColor>
+            
+            {colores.map((color, index) =>  <CardColor key={index} color={color} ></CardColor> )}
+
         </section>
     );
 };
